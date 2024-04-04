@@ -16,4 +16,3 @@ RUN apk add -y --no-cache \
 COPY  --from=GEMS  /usr/local/bundle /usr/local/bundle 
 COPY . /app 
 WORKDIR /app 
-RUN  chmod +x ./setup.sh 
