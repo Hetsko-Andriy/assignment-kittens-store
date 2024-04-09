@@ -15,13 +15,13 @@ services:
         retries: 5
   
   app:
-    container_name: dev-app
-    image: andriyhetsko/kitten
+    container_name: test-app
+    image: andriyhetsko/kitten:test
     environment:
        - DATABASE_URL=postgres://$DB_USER:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_NAME
     ports:
-       - "$APP_PORT:1234"    
+       - "$APP_PORT_TEST:1234"    
     depends_on:
       db:
         condition: service_healthy
-    command: ["./setup.sh"]      
+    command: ["./setup_test.sh"]      
